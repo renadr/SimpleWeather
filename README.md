@@ -1,4 +1,4 @@
-# SimpleWeather
+# SimpleWeather  :sun_with_face:
 
 A weather application made with React Native.
 
