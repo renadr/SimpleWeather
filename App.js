@@ -10,7 +10,7 @@ export default class App extends React.Component {
     };
     return (
       <ScrollView horizontal={true} pagingEnabled={true}>
-        <View style={{backgroundColor:'#FFDF00',flex:1,width:screenWidth,justifyContent:'center',alignItems:'center'}}>
+        <View style={{backgroundColor:'#FFDF00',flex:1,width:screenWidth,}}>
           <StatusBar hidden />
           <View style={{flex:5}}>
             <View style={{flexDirection:'row',flex:1,alignItems: 'center',justifyContent: 'center'}}>
@@ -35,7 +35,9 @@ export default class App extends React.Component {
             </View>
           </View>
           <View style={{flex:1}}>
-            <View style={{flexDirection:'row',alignItems: 'center',justifyContent: 'center'}}></View>
+            <View style={{flexDirection:'row',alignItems: 'center',justifyContent: 'center',flex:1}}>
+              <TextInput style={styles.input} underlineColorAndroid='rgba(0,0,0,0)' />
+            </View>
           </View>            
         </View>
 
@@ -48,10 +50,20 @@ export default class App extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  input: {
+    backgroundColor: '#ffffff',
+    borderRadius: 50,
+    color: "#000000",
+    flex:0.9,
+    fontSize: 20,
+    padding: 10,
+    shadowOpacity: 0.3,
+    shadowRadius: 50,
+    shadowOffset: {
+        height: 0,
+        width: 0
+    },
+    //android
+    elevation: 5,
   },
 });
