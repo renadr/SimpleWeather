@@ -8,9 +8,12 @@ export default class App extends React.Component {
     let pic = {
       uri: 'http://adrienlemaire.fr/SimpleWeather/soleil.gif'
     };
+    // The background color change the night (8:00pm / 20h) and become darker 
+    let d = new Date();
+    let colorBg = d.getHours()<20 ? '#FFDF00' : '#250051';
     return (
       <ScrollView horizontal={true} pagingEnabled={true}>
-        <View style={{backgroundColor:'#FFDF00',flex:1,width:screenWidth,}}>
+        <View style={{backgroundColor:colorBg,flex:1,width:screenWidth,}}>
           <StatusBar hidden />
           <View style={{flex:5}}>
             <View style={{flexDirection:'row',flex:1,alignItems: 'center',justifyContent: 'center'}}>
