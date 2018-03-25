@@ -6,7 +6,7 @@ export default class App extends React.Component {
     let screenWidth = Dimensions.get('window').width;
     let screenHeight = Dimensions.get('window').height;
     return (
-      <ScrollView horizontal={true}>
+      <ScrollView horizontal={true} pagingEnabled={true}>
         <View style={{backgroundColor:'#5f9eff',flex:1,width:screenWidth,justifyContent:'center',alignItems:'center'}}>
           <StatusBar hidden />
           <Text style={{fontSize:20,padding:15,color:'white',textAlign:'center'}}>
