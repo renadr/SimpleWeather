@@ -66,7 +66,8 @@ export default class App extends React.Component {
     return (
       <ScrollView horizontal={true} pagingEnabled={true}>
         <Screen day={this.state.day} type={this.state.type} tempText={this.state.tempText} tempAvg={this.state.tempAvg} />
-
+        <Screen day={this.state.day} type={this.state.type} tempText={this.state.tempText} tempAvg={this.state.tempAvg} />
+        <Screen day={this.state.day} type={this.state.type} tempText={this.state.tempText} tempAvg={this.state.tempAvg} />
       </ScrollView>
     );
   }
