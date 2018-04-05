@@ -38,7 +38,7 @@ export class Screen extends React.Component {
             </View>
             <View style={{flex:1}}>
               <View style={{flexDirection:'row',alignItems: 'center',justifyContent: 'center',flex:1}}>
-                <TextInput style={styles.input} underlineColorAndroid='rgba(0,0,0,0)' />
+                <TextInput style={styles.input} underlineColorAndroid='rgba(0,0,0,0)' placeholder="Enter your city here..." />
               </View>
             </View>            
           </View>
@@ -50,10 +50,13 @@ const styles = StyleSheet.create({
   input: {
     backgroundColor: '#ffffff',
     borderRadius: 50,
-    color: "#000000",
+    color: "#666666",
+    fontWeight: 'bold',
     flex:0.9,
     fontSize: 20,
     padding: 10,
+    paddingLeft: 20,
+    paddingRight: 20,
     shadowOpacity: 0.3,
     shadowRadius: 50,
     shadowOffset: {
