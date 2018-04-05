@@ -1,0 +1,122 @@
+{
+    "chanceflurries" : {
+        "translation": "Risque d'averses de neige",
+        "color": "",
+        "icon_url": "",
+    },
+    "chancerain" : {
+        "translation": "Risque d'averses",
+        "color": "",
+        "icon_url": "",
+    },
+    "chancesleet" : {
+        "translation": "Risque de grêle",
+        "color": "",
+        "icon_url": "",
+    },
+    "chancesnow" : {
+        "translation": "Risque de neige",
+        "color": "",
+        "icon_url": "",
+    },
+    "chancetstorms" : {
+        "translation": "Risque d'orages",
+        "color": "",
+        "icon_url": "",
+    },
+    "clear" : {
+        "translation": "Ciel dégagé",
+        "color": "",
+        "icon_url": "",
+    },
+    "cloudy" : {
+        "translation": "Ciel couvert",
+        "color": "",
+        "icon_url": "",
+    },
+    "flurries" : {
+        "translation": "Averses de neige",
+        "color": "",
+        "icon_url": "",
+    },
+    "fog" : {
+        "translation": "Brouillard",
+        "color": "",
+        "icon_url": "",
+    },
+    "hazy" : {
+        "translation": "Brumeux",
+        "color": "",
+        "icon_url": "",
+    },
+    "mostlycloudy" : {
+        "translation": "Nuageux",
+        "color": "",
+        "icon_url": "",
+    },
+    "mostlysunny" : {
+        "translation": "",
+        "color": "",
+        "icon_url": "",
+    },
+    "partlycloudy" : {
+        "translation": "",
+        "color": "",
+        "icon_url": "",
+    },
+    "partlysunny" : {
+        "translation": "",
+        "color": "",
+        "icon_url": "",
+    },
+    "sleet" : {
+        "translation": "",
+        "color": "",
+        "icon_url": "",
+    },
+    "rain" : {
+        "translation": "",
+        "color": "",
+        "icon_url": "",
+    },
+    "sleet" : {
+        "translation": "",
+        "color": "",
+        "icon_url": "",
+    },
+    "snow" : {
+        "translation": "",
+        "color": "",
+        "icon_url": "",
+    },
+    "sunny" : {
+        "translation": "",
+        "color": "",
+        "icon_url": "",
+    },
+    "tstorms" : {
+        "translation": "",
+        "color": "",
+        "icon_url": "",
+    },
+    "tstorms" : {
+        "translation": "",
+        "color": "",
+        "icon_url": "",
+    },
+    "unknown" : {
+        "translation": "",
+        "color": "",
+        "icon_url": "",
+    },
+    "cloudy" : {
+        "translation": "",
+        "color": "",
+        "icon_url": "",
+    },
+    "partlycloudy" : {
+        "translation": "",
+        "color": "",
+        "icon_url": "",
+    },
+}
