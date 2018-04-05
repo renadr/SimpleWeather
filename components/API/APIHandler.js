@@ -60,7 +60,7 @@ class APIHandler {
                     weatherInfo[i].date.weekday = "Today";
                     break;
                 case 1:
-                    weatherInfo[i].date.weekday = "Tommorow";
+                    weatherInfo[i].date.weekday = "Tomorrow";
                     break;
             }
             dayInfo[i] = {
