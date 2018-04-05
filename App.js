@@ -39,7 +39,6 @@ export default class App extends React.Component {
         </View>
       )
     }
-
     return (
       <ScrollView horizontal={true} pagingEnabled={true}>
         <Screen

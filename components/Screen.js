@@ -30,7 +30,7 @@ export class Screen extends React.Component {
                 <Text style={{color:'#ffffff',fontSize:20}}>{this.props.type}</Text>
               </View>
               <View style={{flexDirection:'row',flex:2,alignItems: 'center',justifyContent: 'center'}}>
-                <Text style={{color:'#ffffff',fontSize:90,textShadowColor: 'rgba(0, 0, 0, 0.1)', textShadowOffset: {width: 0, height: 1}, textShadowRadius: 30, }}>{this.props.tempAvg+" °C"}</Text>
+                <Text style={{color:'#ffffff',fontSize:90,textShadowColor: 'rgba(0, 0, 0, 0.05)', textShadowOffset: {width: 0, height: 1}, textShadowRadius: 30, fontWeight: 'bold', }}>{this.props.tempAvg+" °C"}</Text>
               </View>
               <View style={{flexDirection:'row',flex:1,alignItems: 'center',justifyContent: 'center'}}>
                 <Text style={{color:'#ffffff',fontSize:20}}>{this.props.tempText}</Text>
@@ -38,7 +38,10 @@ export class Screen extends React.Component {
             </View>
             <View style={{flex:1}}>
               <View style={{flexDirection:'row',alignItems: 'center',justifyContent: 'center',flex:1}}>
-                <TextInput style={styles.input} underlineColorAndroid='rgba(0,0,0,0)' />
+                <View style={styles.searchBar}>
+                  <Image source={require('../search.png')} style={styles.ImageStyle} />
+                  <TextInput style={styles.input} underlineColorAndroid='rgba(0,0,0,0)' placeholder="Enter your city here..." />
+                </View>
               </View>
             </View>            
           </View>
@@ -47,13 +50,10 @@ export class Screen extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  input: {
+  searchBar: {
     backgroundColor: '#ffffff',
     borderRadius: 50,
-    color: "#000000",
-    flex:0.9,
-    fontSize: 20,
-    padding: 10,
+    //IOS
     shadowOpacity: 0.3,
     shadowRadius: 50,
     shadowOffset: {
@@ -61,6 +61,24 @@ const styles = StyleSheet.create({
         width: 0
     },
     //android
-    elevation: 5,
+    elevation: 2,
+    flex:0.9,
+    flexDirection:'row'
+  },
+  input: {
+    backgroundColor: '#ffffff',
+    color: "#666666",
+    fontWeight: 'bold',
+    fontSize: 20,
+    padding: 10,
+    flex:0.8,
+  },
+  ImageStyle: {
+    margin: 10,
+    paddingLeft: 5,
+    resizeMode : 'contain',
+    alignItems: 'center',
+    maxHeight:30,
+    flex:0.1,
   },
 });
