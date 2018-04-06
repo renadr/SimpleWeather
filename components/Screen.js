@@ -19,7 +19,7 @@ export class Screen extends React.Component {
         let colorTxt = d.getHours()<20 && d.getHours()>6 ? '#333333' : '#FFFFFF';
         const showAlert = () => {
           Alert.alert(
-             'You need to...'
+             'Fonctionnalite prochainement implementé'
           )
         }
         return (
