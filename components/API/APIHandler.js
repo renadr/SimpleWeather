@@ -18,7 +18,6 @@ class APIHandler {
             APIResponse = await this.getAPIResponseFromLocation();
             weatherInfo = this.getWeatherInfoFromAPIResponse(APIResponse);
             dayInfo = this.getDayInfoFromWeatherInfo(weatherInfo);
-            console.log(dayInfo);
         } catch(e){
             console.error(e);
         }
@@ -69,36 +68,26 @@ class APIHandler {
                 
             }
 
-            conditionInfo = this.getConditionDayInfo(weatherInfo[i]);
+            weatherText = this.getConditionDayInfo(weatherInfo[i]);
             dayInfo[i] = {
                 day: weatherInfo[i].date.weekday,
-                type: conditionInfo.conditionName,
-                icon: conditionInfo.iconURL,
+                infoText: weatherText,
+                iconcode: weatherInfo[i].icon,
                 tempText : weatherInfo[i].low.celsius + ' °C / ' + weatherInfo[i].high.celsius + ' °C',
                 tempAvg : (parseInt(weatherInfo[i].low.celsius) + parseInt(weatherInfo[i].high.celsius)) / 2
             };
-
-            
         }
-        console.log(dayInfo);
         return dayInfo;
     }
 
-    // Transform Condition info from API to get icon url and translation
+    // Transform Condition info from API to get translation
     getConditionDayInfo(dayInfo){
         let origin = dayInfo.icon;
         for(key in iconConfigJSON){
             if(key == origin){
-                var translation = iconConfigJSON[key].translation;
-                var icon = iconConfigJSON[key].icon_url;
+                return iconConfigJSON[key].translation;
             }
         }
-        conditionInfo = {
-            conditionName: translation,
-            iconURL: icon
-        };
-        console.log(conditionInfo);
-        return conditionInfo;
     }
 
 }
