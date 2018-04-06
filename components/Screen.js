@@ -1,12 +1,17 @@
 import React from 'react';
 import { StyleSheet, Text, View, Dimensions, ScrollView, StatusBar, Image, TextInput, ActivityIndicator, TouchableOpacity, Alert} from 'react-native';
+import ImageLoader from './ImagesLoader';
+
+const IconLoader = new ImageLoader();
 
 export class Screen extends React.Component {
+
       render() {
         let screenWidth = Dimensions.get('window').width;
         let screenHeight = Dimensions.get('window').height;
 
-        let pic = require('../icons/color/050-cloud.png');
+        //Load the icon using ImagesLoader Service
+        icon = IconLoader.getIconFromCode(this.props.iconcode);
 
         // The background color change the night (8:00pm / 20h) and become darker 
         let d = new Date();
@@ -29,7 +34,7 @@ export class Screen extends React.Component {
               </View>
               <View style={{flexDirection:'row',flex:4, alignItems: 'center',justifyContent: 'center'}}>
                 <View style={{flex:1,flexDirection:'column',alignItems: 'center',justifyContent: 'center'}}>
-                  <Image source={pic} style={{flex:1}} resizeMode="contain" />
+                  <Image source={icon} style={{flex:1}} resizeMode="contain" />
                 </View>
               </View>
               <View style={{flexDirection:'row',flex:1,alignItems: 'center',justifyContent: 'center'}}>
