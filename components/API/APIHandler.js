@@ -57,11 +57,15 @@ class APIHandler {
         for(let i=0;i<weatherInfo.length;i++){
             switch(i){
                 case 0:
-                    weatherInfo[i].date.weekday = "Today";
+                    weatherInfo[i].date.weekday = "Aujourd'hui";
                     break;
                 case 1:
-                    weatherInfo[i].date.weekday = "Tomorrow";
+                    weatherInfo[i].date.weekday = "Demain";
                     break;
+                case 2:
+                    weatherInfo[i].date.weekday = "Après-demain";
+                    break;
+                
             }
             dayInfo[i] = {
                 day: weatherInfo[i].date.weekday,

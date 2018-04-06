@@ -41,7 +41,7 @@ export class Screen extends React.Component {
               <View style={{flexDirection:'row',alignItems: 'center',justifyContent: 'center',flex:1}}>
                 <View style={styles.searchBar}>
                   <Image source={require('../search.png')} style={styles.ImageStyle} />
-                  <TextInput style={styles.input} underlineColorAndroid='rgba(0,0,0,0)' placeholder="Enter your city here..." />
+                  <TextInput style={styles.input} underlineColorAndroid='rgba(0,0,0,0)' placeholder="Entrez votre ville ici..." />
                 </View>
               </View>
             </View>            
