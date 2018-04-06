@@ -1,10 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, View, Dimensions, ScrollView, StatusBar, Image, TextInput, ActivityIndicator } from 'react-native';
-import { key } from '../../key.js';
+import { APIkey } from '../../key.js';
+import iconConfigJSON from '../../icons.json';
 
 const APIBaseURL = "http://api.wunderground.com/api/";
 const APIService = "/forecast/q/";
-const API = APIBaseURL + key + APIService ;
+const API = APIBaseURL + APIkey + APIService ;
 const headers = {
     "Content-Type": "application/json",
     Accept: "application/json",
@@ -67,15 +68,37 @@ class APIHandler {
                     break;
                 
             }
+
+            conditionInfo = this.getConditionDayInfo(weatherInfo[i]);
             dayInfo[i] = {
                 day: weatherInfo[i].date.weekday,
-                type: weatherInfo[i].conditions,
-                icon: weatherInfo[i].icon,
+                type: conditionInfo.conditionName,
+                icon: conditionInfo.iconURL,
                 tempText : weatherInfo[i].low.celsius + ' °C / ' + weatherInfo[i].high.celsius + ' °C',
                 tempAvg : (parseInt(weatherInfo[i].low.celsius) + parseInt(weatherInfo[i].high.celsius)) / 2
             };
+
+            
         }
+        console.log(dayInfo);
         return dayInfo;
+    }
+
+    // Transform Condition info from API to get icon url and translation
+    getConditionDayInfo(dayInfo){
+        let origin = dayInfo.icon;
+        for(key in iconConfigJSON){
+            if(key == origin){
+                var translation = iconConfigJSON[key].translation;
+                var icon = iconConfigJSON[key].icon_url;
+            }
+        }
+        conditionInfo = {
+            conditionName: translation,
+            iconURL: icon
+        };
+        console.log(conditionInfo);
+        return conditionInfo;
     }
 
 }
