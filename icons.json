@@ -33,11 +33,11 @@
     },
     "fog" : {
         "translation": "Brouillard",
-        "icon_url": "017-haze.png"
+        "icon_url": "038-fog.png"
     },
     "hazy" : {
         "translation": "Brumeux",
-        "icon_url": "017-haze.png"
+        "icon_url": "038-fog.png"
     },
     "mostlycloudy" : {
         "translation": "Nuageux",
