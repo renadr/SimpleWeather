@@ -5,9 +5,11 @@ export class Screen extends React.Component {
       render() {
         let screenWidth = Dimensions.get('window').width;
         let screenHeight = Dimensions.get('window').height;
-        let pic = {
-          uri: '../icons/color/001-palm-tree.png'
-        };
+
+        // let json = JSON.parse('../icons.json');
+        // let str 
+        let pic = require('../icons/color/050-cloud.png');
+
         // The background color change the night (8:00pm / 20h) and become darker 
         let d = new Date();
         let colorBg = d.getHours()<20 && d.getHours()>6 ? '#FFFFFF' : '#333333';
@@ -24,7 +26,7 @@ export class Screen extends React.Component {
               </View>
               <View style={{flexDirection:'row',flex:4, alignItems: 'center',justifyContent: 'center'}}>
                 <View style={{flex:1,flexDirection:'column',alignItems: 'center',justifyContent: 'center'}}>
-                  <Image source={require('../icons/color/050-cloud.png')} style={{flex:1}} resizeMode="contain" />
+                  <Image source={pic} style={{flex:1}} resizeMode="contain" />
                 </View>
               </View>
               <View style={{flexDirection:'row',flex:1,alignItems: 'center',justifyContent: 'center'}}>

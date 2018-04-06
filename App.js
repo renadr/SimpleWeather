@@ -46,18 +46,21 @@ export default class App extends React.Component {
           type={this.state.data.today.type}
           tempText={this.state.data.today.tempText}
           tempAvg={this.state.data.today.tempAvg}
+          icon={this.state.data.today.icon}
         />
         <Screen
           day={this.state.data.tommorow.day}
           type={this.state.data.tommorow.type}
           tempText={this.state.data.tommorow.tempText}
           tempAvg={this.state.data.tommorow.tempAvg}
+          icon={this.state.data.tommorow.icon}
         />
         <Screen
           day={this.state.data.thirdDay.day}
           type={this.state.data.thirdDay.type}
           tempText={this.state.data.thirdDay.tempText}
           tempAvg={this.state.data.thirdDay.tempAvg}
+          icon={this.state.data.thirdDay.icon}
         />
       </ScrollView>
     );

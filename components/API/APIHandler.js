@@ -70,6 +70,7 @@ class APIHandler {
             dayInfo[i] = {
                 day: weatherInfo[i].date.weekday,
                 type: weatherInfo[i].conditions,
+                icon: weatherInfo[i].icon,
                 tempText : weatherInfo[i].low.celsius + ' °C / ' + weatherInfo[i].high.celsius + ' °C',
                 tempAvg : (parseInt(weatherInfo[i].low.celsius) + parseInt(weatherInfo[i].high.celsius)) / 2
             };
