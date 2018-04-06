@@ -1,19 +1,22 @@
 import React from 'react';
-import { StyleSheet, Text, View, Dimensions, ScrollView, StatusBar, Image, TextInput, ActivityIndicator } from 'react-native';
+import { StyleSheet, Text, View, Dimensions, ScrollView, StatusBar, Image, TextInput, ActivityIndicator, TouchableOpacity, Alert} from 'react-native';
 
 export class Screen extends React.Component {
       render() {
         let screenWidth = Dimensions.get('window').width;
         let screenHeight = Dimensions.get('window').height;
 
-        // let json = JSON.parse('../icons.json');
-        // let str 
         let pic = require('../icons/color/050-cloud.png');
 
         // The background color change the night (8:00pm / 20h) and become darker 
         let d = new Date();
         let colorBg = d.getHours()<20 && d.getHours()>6 ? '#FFFFFF' : '#333333';
         let colorTxt = d.getHours()<20 && d.getHours()>6 ? '#333333' : '#FFFFFF';
+        const showAlert = () => {
+          Alert.alert(
+             'You need to...'
+          )
+        }
         return (
             <View style={{backgroundColor:colorBg,flex:1,width:screenWidth,}}>
             <StatusBar hidden />
@@ -41,10 +44,13 @@ export class Screen extends React.Component {
             </View>
             <View style={{flex:1}}>
               <View style={{flexDirection:'row',alignItems: 'center',justifyContent: 'center',flex:1}}>
-                <View style={styles.searchBar}>
-                  <Image source={require('../search.png')} style={styles.ImageStyle} />
-                  <TextInput style={styles.input} underlineColorAndroid='rgba(0,0,0,0)' placeholder="Entrez votre ville ici..." />
-                </View>
+                <TouchableOpacity onPress={showAlert} style={{flex:1,flexDirection:'row',alignItems: 'center',justifyContent: 'center',padding:5}}>
+                  <View style={styles.searchBar}>
+                    <Image source={require('../search.png')} style={styles.ImageStyle} />
+                    <Text style={styles.input}>Entrez votre ville ici...</Text>
+                    {/* <TextInput style={styles.input} underlineColorAndroid='rgba(0,0,0,0)' placeholder="Entrez votre ville ici..." /> */}
+                  </View>
+                </TouchableOpacity>
               </View>
             </View>            
           </View>
@@ -78,7 +84,7 @@ const styles = StyleSheet.create({
   },
   ImageStyle: {
     margin: 10,
-    paddingLeft: 5,
+    paddingLeft: 10,
     resizeMode : 'contain',
     alignItems: 'center',
     maxHeight:30,
