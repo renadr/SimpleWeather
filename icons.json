@@ -1,102 +1,82 @@
 {
     "chanceflurries" : {
-        "translation": "Risque d'averses de neige",
-        "color": "",
-        "icon_url": ""
+        "translation": "Risque d'averses de neige", 
+        "icon_url": "039-snow.png"
     },
     "chancerain" : {
         "translation": "Risque d'averses",
-        "color": "",
-        "icon_url": ""
+        "icon_url": "037-hail.png"
     },
     "chancesleet" : {
-        "translation": "Risque de grêle",
-        "color": "",
-        "icon_url": ""
+        "translation": "Risque de grêle", 
+        "icon_url": "031-sleet.png"
     },
     "chancesnow" : {
         "translation": "Risque de neige",
-        "color": "",
-        "icon_url": ""
+        "icon_url": "039-snow.png"
     },
     "chancetstorms" : {
-        "translation": "Risque d'orages",
-        "color": "",
-        "icon_url": ""
+        "translation": "Risque d'orages", 
+        "icon_url": "050-cloud.png"
     },
     "clear" : {
-        "translation": "Ciel dégagé",
-        "color": "",
-        "icon_url": ""
+        "translation": "Ciel dégagé", 
+        "icon_url": "033-sunrise.png"
     },
     "cloudy" : {
         "translation": "Ciel couvert",
-        "color": "",
-        "icon_url": ""
+        "icon_url": "057-clouds.png"
     },
     "flurries" : {
         "translation": "Averses de neige",
-        "color": "",
-        "icon_url": ""
+        "icon_url": "039-snow.png"
     },
     "fog" : {
         "translation": "Brouillard",
-        "color": "",
-        "icon_url": ""
+        "icon_url": "017-haze.png"
     },
     "hazy" : {
         "translation": "Brumeux",
-        "color": "",
-        "icon_url": ""
+        "icon_url": "017-haze.png"
     },
     "mostlycloudy" : {
         "translation": "Nuageux",
-        "color": "",
-        "icon_url": ""
+        "icon_url": "055-cloudy-1.png"
     },
     "mostlysunny" : {
         "translation": "Principalement ensoleillé",
-        "color": "",
-        "icon_url": ""
+        "icon_url": "055-cloudy-1.png"
     },
     "partlycloudy" : {
         "translation": "Partiellement nuageux",
-        "color": "",
-        "icon_url": ""
+        "icon_url": "055-cloudy-1.png"
     },
     "partlysunny" : {
         "translation": "Partiellement ensoleillé",
-        "color": "",
-        "icon_url": ""
+        "icon_url": "055-cloudy-1.png"
     },
     "sleet" : {
         "translation": "Pluie verglaçante",
-        "color": "",
-        "icon_url": ""
+        "icon_url": "031-sleet.png"
     },
     "rain" : {
         "translation": "Pluie",
-        "color": "",
-        "icon_url": ""
+        "icon_url": "037-hail.png"
     },
     "snow" : {
         "translation": "Neige",
-        "color": "",
-        "icon_url": ""
+        "icon_url": "039-snow.png"
     },
     "sunny" : {
         "translation": "Ensoleillé",
-        "color": "",
-        "icon_url": ""
+        "icon_url": "033-sunrise.png"
     },
     "tstorms" : {
         "translation": "Orageux",
-        "color": "",
-        "icon_url": ""
+        "icon_url": "035-storm.png"
     },
     "unknown" : {
         "translation": "Inconnu",
-        "color": "",
         "icon_url": ""
     }
 }
