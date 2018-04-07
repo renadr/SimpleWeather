@@ -33,8 +33,9 @@ export default class App extends React.Component {
   render() {
     if(this.state.isLoading){
       return(
-       <View style={{flex: 1, padding: 20}}>
-          <ActivityIndicator/>
+       <View style={{flex: 1, padding: 20,alignItems: 'center',justifyContent: 'center'}}>
+          <Image source={require('./icons/logo.png')} style={{width: 200, height: 200}}/>
+          <ActivityIndicator color="#03eefd" size="large"/>
         </View>
       )
     }
