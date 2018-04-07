@@ -1,5 +1,5 @@
 {
-  "name": "ReactWeather",
+  "name": "reactweather",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
@@ -23,5 +23,16 @@
     "react": "16.2.0",
     "react-native": "0.52.0",
     "react-native-swiper": "^1.5.13"
-  }
+  },
+  "description": "A weather application made with React Native.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renadr/SimpleWeather.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/renadr/SimpleWeather/issues"
+  },
+  "homepage": "https://github.com/renadr/SimpleWeather#readme"
 }
