@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Dimensions, ScrollView, StatusBar, Image, TextInput, ActivityIndicator, TouchableOpacity, Alert} from 'react-native';
+import { StyleSheet, Text, View, Dimensions, ScrollView, StatusBar, Image, TextInput, ActivityIndicator, TouchableNativeFeedback , Alert} from 'react-native';
 import ImageLoader from './ImagesLoader';
 
 const IconLoader = new ImageLoader();
@@ -49,13 +49,13 @@ export class Screen extends React.Component {
             </View>
             <View style={{flex:1}}>
               <View style={{flexDirection:'row',alignItems: 'center',justifyContent: 'center',flex:1}}>
-                <TouchableOpacity onPress={showAlert} style={{flex:1,flexDirection:'row',alignItems: 'center',justifyContent: 'center',padding:5}}>
+                <TouchableNativeFeedback  onPress={showAlert} style={{flex:1,flexDirection:'row',alignItems: 'center',justifyContent: 'center',padding:5}}>
                   <View style={styles.searchBar}>
                     <Image source={require('../search.png')} style={styles.ImageStyle} />
                     <Text style={styles.input}>Entrez votre ville ici...</Text>
                     {/* <TextInput style={styles.input} underlineColorAndroid='rgba(0,0,0,0)' placeholder="Entrez votre ville ici..." /> */}
                   </View>
-                </TouchableOpacity>
+                </TouchableNativeFeedback >
               </View>
             </View>            
           </View>
@@ -80,7 +80,6 @@ const styles = StyleSheet.create({
     flexDirection:'row'
   },
   input: {
-    backgroundColor: '#ffffff',
     color: "#666666",
     fontWeight: 'bold',
     fontSize: 20,
