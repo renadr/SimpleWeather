@@ -77,6 +77,18 @@ class APIHandler {
         }
         return dayInfo;
     }
+    
+    async getCityFromSearchBar(city) {
++        try{
++            let response = await fetch(
++                API + city + '.json'
++                );
++            responseJson =  await response.json();
++        }   catch (error){
++            console.error(error);
++        }
++        return responseJson;
++    }
 
 }
 

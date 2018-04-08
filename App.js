@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Dimensions, ScrollView, StatusBar, Image, TextInput, ActivityIndicator } from 'react-native';
 import { key } from './key';
 import { Screen } from './components/Screen';
+
 import APIHandler from './components/API/APIHandler';
 
 const APIManager = new APIHandler();
@@ -20,7 +21,6 @@ export default class App extends React.Component {
     this.setState({ isLoading: true })
     // Using Promise, getting API data then setting the state
     APIManager.getDataFromAPI().then(data => {
-      console.log(data);
       this.setState(
         {
           isLoading: false,
@@ -34,8 +34,9 @@ export default class App extends React.Component {
   render() {
     if(this.state.isLoading){
       return(
-       <View style={{flex: 1, padding: 20}}>
-          <ActivityIndicator/>
+       <View style={{flex: 1, padding: 20,alignItems: 'center',justifyContent: 'center'}}>
+          <Image source={require('./icons/logo.png')} style={{width: 200, height: 200}}/>
+          <ActivityIndicator color="#03eefd" size="large"/>
         </View>
       )
     }
@@ -43,24 +44,24 @@ export default class App extends React.Component {
       <ScrollView horizontal={true} pagingEnabled={true}>
         <Screen
           day={this.state.data.today.day}
-          type={this.state.data.today.type}
+          type={this.state.data.today.infoText}
           tempText={this.state.data.today.tempText}
           tempAvg={this.state.data.today.tempAvg}
-          icon={this.state.data.today.icon}
+          iconcode={this.state.data.today.iconcode}
         />
         <Screen
           day={this.state.data.tommorow.day}
-          type={this.state.data.tommorow.type}
+          type={this.state.data.tommorow.infoText}
           tempText={this.state.data.tommorow.tempText}
           tempAvg={this.state.data.tommorow.tempAvg}
-          icon={this.state.data.tommorow.icon}
+          iconcode={this.state.data.tommorow.iconcode}
         />
         <Screen
           day={this.state.data.thirdDay.day}
-          type={this.state.data.thirdDay.type}
+          type={this.state.data.thirdDay.infoText}
           tempText={this.state.data.thirdDay.tempText}
           tempAvg={this.state.data.thirdDay.tempAvg}
-          icon={this.state.data.thirdDay.icon}
+          iconcode={this.state.data.thirdDay.iconcode}
         />
       </ScrollView>
     );
