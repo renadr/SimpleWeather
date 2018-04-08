@@ -1,10 +1,17 @@
 import React from 'react';
 import { StyleSheet, Text, View, Dimensions, ScrollView, StatusBar, Image, TextInput, ActivityIndicator, TouchableNativeFeedback , Alert} from 'react-native';
 import ImageLoader from './ImagesLoader';
+import SearchScreen from '../components/SearchScreen';
+import { StackNavigator } from 'react-navigation';
+import { RootStack } from '../App';
 
 const IconLoader = new ImageLoader();
 
 export class Screen extends React.Component {
+
+        constructor (props) {
+          super(props)
+      }
 
       render() {
         let screenWidth = Dimensions.get('window').width;
@@ -47,17 +54,6 @@ export class Screen extends React.Component {
                 <Text style={{color:colorTxt,fontSize:20}}>{this.props.tempText}</Text>
               </View>
             </View>
-            <View style={{flex:1}}>
-              <View style={{flexDirection:'row',alignItems: 'center',justifyContent: 'center',flex:1}}>
-                <TouchableNativeFeedback  onPress={showAlert} style={{flex:1,flexDirection:'row',alignItems: 'center',justifyContent: 'center',padding:5}}>
-                  <View style={styles.searchBar}>
-                    <Image source={require('../search.png')} style={styles.ImageStyle} />
-                    <Text style={styles.input}>Entrez votre ville ici...</Text>
-                    {/* <TextInput style={styles.input} underlineColorAndroid='rgba(0,0,0,0)' placeholder="Entrez votre ville ici..." /> */}
-                  </View>
-                </TouchableNativeFeedback >
-              </View>
-            </View>            
           </View>
         );
     }
