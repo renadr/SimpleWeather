@@ -1,6 +1,6 @@
 # SimpleWeather :sunny:
 
-![alt text](https://github.com/renadr/SimpleWeather/blob/master/icons/logo.png "Logo SimpleWeather")
+![alt text](https://github.com/renadr/SimpleWeather/blob/master/icons/logo-128.png "Logo SimpleWeather")
 
 ## Presentation
 
