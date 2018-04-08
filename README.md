@@ -7,6 +7,8 @@
 SimpleWeather is an application made for Android and iOS. It allows you to see the weather over the next three days with with essential information :
 - Temperature (average, high and low)
 - Weather (sun, rain, snow, etc.)
+
+The application is only available in french. The english language is coming soon... :smiley: :uk:
  
  ## Credit
  
