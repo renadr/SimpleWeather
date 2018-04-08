@@ -88,8 +88,19 @@ class APIHandler {
                 return iconConfigJSON[key].translation;
             }
         }
-    }
+    } 
 
+    async getCityFromSearchBar(city) {
+        try{
+            let response = await fetch(
+                API + city + '.json'
+                );
+            responseJson =  await response.json();
+        }   catch (error){
+            console.error(error);
+        }
+        return responseJson;
+    }
 }
 
 module.exports = APIHandler;
