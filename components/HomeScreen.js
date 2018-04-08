@@ -3,7 +3,8 @@ import { StyleSheet, Text, View, Dimensions, ScrollView, StatusBar, Image, TextI
 import { key } from '../key';
 import { Screen } from '../components/Screen';
 import APIHandler from '../components/API/APIHandler';
-import { styles } from '../styles/styles';
+import { styles } from '../styles/Styles';
+import StylesDefault from '../styles/StylesDefault';
 
 const APIManager = new APIHandler();
 
@@ -41,6 +42,7 @@ class HomeScreen extends React.Component {
         </View>
       )
     }
+    const styleColor = new StylesDefault();
     return (
         <View style={{flex:1}}>
             <View style={{flex:8}}>
@@ -68,13 +70,12 @@ class HomeScreen extends React.Component {
                 />
             </ScrollView>
             </View>
-            <View style={{flex:1}}>
+            <View style={{flex:1,backgroundColor:styleColor.getBackgroundColor()}}>
                 <View style={{flexDirection:'row',alignItems: 'center',justifyContent: 'center',flex:1}}>
                     <TouchableNativeFeedback  onPress={() => this.props.navigation.navigate('SearchScreen')} style={{flex:1,flexDirection:'row',alignItems: 'center',justifyContent: 'center',padding:5}}>
                     <View style={styles.searchBar}>
                         <Image source={require('../search.png')} style={styles.ImageStyle} />
                         <Text style={styles.input}>Entrez votre ville ici...</Text>
-                        {/* <TextInput style={styles.input} underlineColorAndroid='rgba(0,0,0,0)' placeholder="Entrez votre ville ici..." /> */}
                     </View>
                     </TouchableNativeFeedback >
                 </View>
