@@ -95,12 +95,14 @@ class APIHandler {
     async getCityFromSearchBar(city) {
         try{
             let response = await fetch(
-                API + city + '.json'
+                "http://autocomplete.wunderground.com/aq?query=" + city + '.json'
                 );
             responseJson =  await response.json();
         }   catch (error){
             console.error(error);
         }
+        console.log("http : " + API)
+        console.log(city)
         console.log(responseJson); 
         searchBarCities = responseJson; 
         return responseJson;
