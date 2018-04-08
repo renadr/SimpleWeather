@@ -8,7 +8,7 @@ class SearchScreen extends React.Component {
                 <View style={{flex:1,flexDirection:'row',alignItems: 'center',justifyContent: 'center',padding:5}}>
                     <View style={styles.searchBar}>
                     <Image source={require('../search.png')} style={styles.ImageStyle} />
-                    <TextInput style={styles.input} underlineColorAndroid='rgba(0,0,0,0)' placeholder="Entrez votre ville ici..." />
+                    <TextInput style={styles.input} underlineColorAndroid='rgba(0,0,0,0)' placeholder="Entrez votre ville ici..." autoFocus />
                     </View>
                 </View>
                 <View style={{flex:8}}>
