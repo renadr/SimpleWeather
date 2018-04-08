@@ -1,8 +1,6 @@
 import React from 'react';
-import { StyleSheet, Text, View, Dimensions, ScrollView, StatusBar, Image, TextInput, ActivityIndicator, TouchableNativeFeedback , Alert} from 'react-native';
+import { Text, View, Dimensions, StatusBar, Image } from 'react-native';
 import ImageLoader from './ImagesLoader';
-import SearchScreen from '../components/SearchScreen';
-import { StackNavigator } from 'react-navigation';
 import StylesDefault from '../styles/StylesDefault';
 
 const IconLoader = new ImageLoader();
@@ -10,8 +8,8 @@ const styleColor = new StylesDefault();
 
 export class Screen extends React.Component {
 
-        constructor (props) {
-          super(props)
+      constructor (props) {
+        super(props)
       }
 
       render() {

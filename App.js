@@ -12,7 +12,6 @@ export default class App extends React.Component {
   }
 }
 
-
 export const RootStack = StackNavigator(
   {
     HomeScreen: { screen : HomeScreen},

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Dimensions, ScrollView, StatusBar, Image, TextInput, ActivityIndicator, TouchableNativeFeedback } from 'react-native';
+import { Text, View, ScrollView, Image, ActivityIndicator, TouchableNativeFeedback } from 'react-native';
 import { key } from '../key';
 import { Screen } from '../components/Screen';
 import APIHandler from '../components/API/APIHandler';

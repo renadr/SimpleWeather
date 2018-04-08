@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Dimensions, ScrollView, StatusBar, Image, TextInput, ActivityIndicator, TouchableNativeFeedback , Alert} from 'react-native';
+import { View, Image, TextInput } from 'react-native';
 import { styles } from '../styles/Styles';
 import StylesDefault from '../styles/StylesDefault';
 
