@@ -14,6 +14,6 @@ The application is only available in french. The english language is coming soon
  
  This application is made with [React Native](https://facebook.github.io/react-native/). 
  
- We use the Weather [Underground API](https://www.wunderground.com/weather/api).
+ We use the [Weather Underground API](https://www.wunderground.com/weather/api).
  
- S/o to Freepik from www.flaticon.com for the icon pack.
+ S/o to Freepik from [Flaticon](www.flaticon.com) for the icon pack.
