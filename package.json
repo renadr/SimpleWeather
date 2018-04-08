@@ -1,10 +1,10 @@
 {
-  "name": "reactweather",
+  "name": "ReactWeather",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "react-native-scripts": "1.11.1",
     "jest-expo": "25.0.0",
+    "react-native-scripts": "1.11.1",
     "react-test-renderer": "16.2.0"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
@@ -22,17 +22,8 @@
     "expo": "^25.0.0",
     "react": "16.2.0",
     "react-native": "0.52.0",
-    "react-native-swiper": "^1.5.13"
-  },
-  "description": "A weather application made with React Native.",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/renadr/SimpleWeather.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/renadr/SimpleWeather/issues"
-  },
-  "homepage": "https://github.com/renadr/SimpleWeather#readme"
+    "react-native-elements": "^0.19.1",
+    "react-native-swiper": "^1.5.13",
+    "react-navigation": "^1.5.11"
+  }
 }

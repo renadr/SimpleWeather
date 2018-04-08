@@ -1,9 +1,19 @@
-# SimpleWeather :sunny: :cloud:
+# SimpleWeather :sunny:
 
-A weather application made with React Native.
+![alt text](http://www.adrienlemaire.fr/src/img/simple-mockups-weather.png "Logo SimpleWeather & mockups")
 
-See the weather for the next three days.
+## Presentation
 
- :warning: **Work in Progress** :warning:
+SimpleWeather is an application made for Android and iOS. It allows you to see the weather over the next three days with with essential information :
+- Temperature (average, high and low)
+- Weather (sun, rain, snow, etc.)
+
+The application is only available in french. The english language is coming soon... :smiley: :uk:
  
- S/o to Freepik from www.flaticon.com for the icon pack.
+ ## Credit
+ 
+ This application is made with [React Native](https://facebook.github.io/react-native/). 
+ 
+ We use the [Weather Underground API](https://www.wunderground.com/weather/api).
+ 
+ S/o to Freepik from [Flaticon](www.flaticon.com) for the icon pack.

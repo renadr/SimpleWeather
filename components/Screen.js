@@ -1,12 +1,24 @@
 import React from 'react';
-import { StyleSheet, Text, View, Dimensions, ScrollView, StatusBar, Image, TextInput, ActivityIndicator, TouchableOpacity, Alert} from 'react-native';
+import { StyleSheet, Text, View, Dimensions, ScrollView, StatusBar, Image, TextInput, ActivityIndicator, TouchableNativeFeedback , Alert} from 'react-native';
+import ImageLoader from './ImagesLoader';
+import SearchScreen from '../components/SearchScreen';
+import { StackNavigator } from 'react-navigation';
+import { RootStack } from '../App';
+
+const IconLoader = new ImageLoader();
 
 export class Screen extends React.Component {
+
+        constructor (props) {
+          super(props)
+      }
+
       render() {
         let screenWidth = Dimensions.get('window').width;
         let screenHeight = Dimensions.get('window').height;
 
-        let pic = require('../icons/color/050-cloud.png');
+        //Load the icon using ImagesLoader Service
+        icon = IconLoader.getIconFromCode(this.props.iconcode);
 
         // The background color change the night (8:00pm / 20h) and become darker 
         let d = new Date();
@@ -14,7 +26,7 @@ export class Screen extends React.Component {
         let colorTxt = d.getHours()<20 && d.getHours()>6 ? '#333333' : '#FFFFFF';
         const showAlert = () => {
           Alert.alert(
-             'You need to...'
+             'Fonctionnalite prochainement implementé'
           )
         }
         return (
@@ -29,7 +41,7 @@ export class Screen extends React.Component {
               </View>
               <View style={{flexDirection:'row',flex:4, alignItems: 'center',justifyContent: 'center'}}>
                 <View style={{flex:1,flexDirection:'column',alignItems: 'center',justifyContent: 'center'}}>
-                  <Image source={pic} style={{flex:1}} resizeMode="contain" />
+                  <Image source={icon} style={{flex:1}} resizeMode="contain" />
                 </View>
               </View>
               <View style={{flexDirection:'row',flex:1,alignItems: 'center',justifyContent: 'center'}}>
@@ -42,17 +54,6 @@ export class Screen extends React.Component {
                 <Text style={{color:colorTxt,fontSize:20}}>{this.props.tempText}</Text>
               </View>
             </View>
-            <View style={{flex:1}}>
-              <View style={{flexDirection:'row',alignItems: 'center',justifyContent: 'center',flex:1}}>
-                <TouchableOpacity onPress={showAlert} style={{flex:1,flexDirection:'row',alignItems: 'center',justifyContent: 'center',padding:5}}>
-                  <View style={styles.searchBar}>
-                    <Image source={require('../search.png')} style={styles.ImageStyle} />
-                    <Text style={styles.input}>Entrez votre ville ici...</Text>
-                    {/* <TextInput style={styles.input} underlineColorAndroid='rgba(0,0,0,0)' placeholder="Entrez votre ville ici..." /> */}
-                  </View>
-                </TouchableOpacity>
-              </View>
-            </View>            
           </View>
         );
     }
@@ -75,7 +76,6 @@ const styles = StyleSheet.create({
     flexDirection:'row'
   },
   input: {
-    backgroundColor: '#ffffff',
     color: "#666666",
     fontWeight: 'bold',
     fontSize: 20,
