@@ -31,5 +31,18 @@ export const styles = StyleSheet.create({
       maxHeight:30,
       flex:0.1,
     },
+    resultClickable: {
+      flex:1,
+      borderRadius: 50,
+    },
+    resultItem: {
+      height:50,
+      alignItems: 'center', 
+      flexDirection: 'row',
+      flex:1,
+    },
+    resultItemText: {
+      fontSize: 17,
+    }
   });
   
