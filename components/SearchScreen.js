@@ -1,33 +1,54 @@
 import React from 'react';
-import { View, Image, TextInput, ScrollView, Text, TouchableNativeFeedback } from 'react-native';
+import { View, Image, TextInput, ScrollView, Text, TouchableNativeFeedback, Button, FlatList } from 'react-native';
 import { styles } from '../styles/Styles';
 import StylesDefault from '../styles/StylesDefault';
+import APIHandler from '../components/API/APIHandler';
+
+const APIManager = new APIHandler();
 
 class SearchScreen extends React.Component {
+
+    constructor(props){
+        super(props);
+        this.state={
+          cities: null,
+          search: ''
+        };
+    }
+    
+    AutomaticResearch(text) {
+        this.setState({search: text});
+        console.log(this.state.search);
+        APIManager.getCities(this.state.search).then(data=> {
+            this.setState({
+                cities: data
+            });
+            console.log(this.state.cities);
+        }).catch(error => console.error(error));
+    }
+
     render() {
         const styleColor = new StylesDefault();
+
         return(
             <View style={{flex:1,backgroundColor:styleColor.getBackgroundColor()}}>
                 <View style={{flex:1,flexDirection:'row',alignItems: 'center',justifyContent: 'center',padding:5}}>
                     <View style={styles.searchBar}>
-                    <Image source={require('../search.png')} style={styles.ImageStyle} />
-                    <TextInput style={styles.input} underlineColorAndroid='rgba(0,0,0,0)' placeholder="Entrez votre ville ici..." autoFocus />
+                        <Image source={require('../search.png')} style={styles.ImageStyle} />
+                        <TextInput onChangeText={(text) => this.AutomaticResearch(text)} style={styles.input} underlineColorAndroid='rgba(0,0,0,0)' placeholder="Entrez votre ville ici..." autoFocus />
                     </View>
                 </View>
+                {/* <Button
+                onPress={() => this.test()}
+                title="Learn More"
+                color="#841584"
+                /> */}
                 <View style={{flex:8,alignItems: 'center'}}>
                 {/* Ajouter ici la liste des résultats (limité à un chiffre choisi) */}
-                    <ScrollView style={styles.resultScroll}>
-                        <TouchableNativeFeedback style={styles.resultClickable}><View style={styles.resultItem}><Text style={styles.resultItemText}>New York City, New York, US</Text></View></TouchableNativeFeedback>
-                        <TouchableNativeFeedback style={styles.resultClickable}><View style={styles.resultItem}><Text style={styles.resultItemText}>New Kingston, Jamaica, JM</Text></View></TouchableNativeFeedback>
-                        <TouchableNativeFeedback style={styles.resultClickable}><View style={styles.resultItem}><Text style={styles.resultItemText}>Newcastle, Australia, AU</Text></View></TouchableNativeFeedback>
-                        <TouchableNativeFeedback style={styles.resultClickable}><View style={styles.resultItem}><Text style={styles.resultItemText}>New Orleans, Louisana, US</Text></View></TouchableNativeFeedback>
-                        <TouchableNativeFeedback style={styles.resultClickable}><View style={styles.resultItem}><Text style={styles.resultItemText}>Newcastle, South Africa, ZA</Text></View></TouchableNativeFeedback>
-                        <TouchableNativeFeedback style={styles.resultClickable}><View style={styles.resultItem}><Text style={styles.resultItemText}>New Delhi, India, IN</Text></View></TouchableNativeFeedback>
-                        <TouchableNativeFeedback style={styles.resultClickable}><View style={styles.resultItem}><Text style={styles.resultItemText}>Newark, New Jersey, US</Text></View></TouchableNativeFeedback>
-                        <TouchableNativeFeedback style={styles.resultClickable}><View style={styles.resultItem}><Text style={styles.resultItemText}>Newcastle upon Tyne, United Kingdom, GB</Text></View></TouchableNativeFeedback>
-                        <TouchableNativeFeedback style={styles.resultClickable}><View style={styles.resultItem}><Text style={styles.resultItemText}>Newport News, Virginia, US</Text></View></TouchableNativeFeedback>
-                        <TouchableNativeFeedback style={styles.resultClickable}><View style={styles.resultItem}><Text style={styles.resultItemText}>New Haven, Connecticut, US</Text></View></TouchableNativeFeedback>
-                    </ScrollView>
+                <FlatList
+                data={this.state.cities}
+                renderItem={({item}) => <Text>{item.name}</Text>}
+                />
                 </View>
             </View>
         )

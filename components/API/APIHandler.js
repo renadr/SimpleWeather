@@ -5,6 +5,7 @@ import iconConfigJSON from '../../icons.json';
 const APIBaseURL = "http://api.wunderground.com/api/";
 const APIService = "/forecast/q/";
 const API = APIBaseURL + APIkey + APIService ;
+const APIAutoComplete = "http://autocomplete.wunderground.com/aq?query=";
 const headers = {
     "Content-Type": "application/json",
     Accept: "application/json",
@@ -89,17 +90,40 @@ class APIHandler {
         }
     } 
 
-    async getCityFromSearchBar(city) {
+    async getCities(city) {
+        try {
+            allMatches = await this.getCitiesFromAPI(city);
+            results = this.getImportantDataFromJson(allMatches);
+        } catch(e){
+            console.error(e);
+        }
+        return results;
+    }
+
+    async getCitiesFromAPI(city) {
         try{
             let response = await fetch(
-                API + city + '.json'
+                APIAutoComplete + city
                 );
             responseJson =  await response.json();
         }   catch (error){
             console.error(error);
         }
+        // console.log(responseJson);
         return responseJson;
     }
+
+    getImportantDataFromJson(allMatches) {
+        city = [];
+        for(let i=0;i<allMatches.RESULTS.length;i++) {
+            city[i] = {
+                name: allMatches.RESULTS[i].name,
+                country: allMatches.RESULTS[i].c
+            }
+        }
+        return city;
+    }
+
 }
 
 module.exports = APIHandler;
