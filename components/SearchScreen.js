@@ -38,14 +38,12 @@ class SearchScreen extends React.Component {
                         <TextInput onChangeText={(text) => this.AutomaticResearch(text)} style={styles.input} underlineColorAndroid='rgba(0,0,0,0)' placeholder="Entrez votre ville ici..." autoFocus />
                     </View>
                 </View>
-                {/* <Button
-                onPress={() => this.test()}
-                title="Learn More"
-                color="#841584"
-                /> */}
                 <View style={{flex:8,alignItems: 'center'}}>
-                
-                <FlatList style={{flex:1}} data={this.state.cities} renderItem={({item}) => <TouchableNativeFeedback style={styles.resultClickable}><Text style={{color:styleColor.getTextColor(),fontSize:15}}>{item.name}</Text></TouchableNativeFeedback>}keyExtractor={(item, index) => index} />
+                    <FlatList style={{flex:1,flexDirection:'column'}} data={this.state.cities} renderItem={({item}) => 
+                        <TouchableNativeFeedback style={styles.resultItem}>
+                            <Text style={{color:styleColor.getTextColor(),fontSize:20}}>{item.name+", "+item.country}</Text>
+                        </TouchableNativeFeedback>}keyExtractor={(item, index) => index} 
+                    />
                 </View>
             </View>
         )
