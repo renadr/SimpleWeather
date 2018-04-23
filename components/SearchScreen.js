@@ -44,11 +44,8 @@ class SearchScreen extends React.Component {
                 color="#841584"
                 /> */}
                 <View style={{flex:8,alignItems: 'center'}}>
-                {/* Ajouter ici la liste des résultats (limité à un chiffre choisi) */}
-                <FlatList
-                data={this.state.cities}
-                renderItem={({item}) => <Text>{item.name}</Text>}
-                />
+                
+                <FlatList style={{flex:1}} data={this.state.cities} renderItem={({item}) => <TouchableNativeFeedback style={styles.resultClickable}><Text style={{color:styleColor.getTextColor(),fontSize:15}}>{item.name}</Text></TouchableNativeFeedback>}keyExtractor={(item, index) => index} />
                 </View>
             </View>
         )
