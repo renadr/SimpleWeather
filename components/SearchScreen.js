@@ -40,10 +40,8 @@ class SearchScreen extends React.Component {
                 </View>
                 <View style={{flex:8,alignItems: 'center'}}>
                     <FlatList style={{flex:1,flexDirection:'column'}} data={this.state.cities} renderItem={({item}) => 
-                        <TouchableNativeFeedback style={styles.resultItem}>
-                            <Text style={{color:styleColor.getTextColor(),fontSize:20}}>{item.name+", "+item.country}</Text>
-                        </TouchableNativeFeedback>}keyExtractor={(item, index) => index} 
-                    />
+                        <TouchableNativeFeedback style={styles.resultClickable}><View style={styles.resultItem}><Text style={styles.resultItemText}>{item.name+", "+item.country}</Text></View></TouchableNativeFeedback>}
+                    keyExtractor={(item, index) => index} />
                 </View>
             </View>
         )

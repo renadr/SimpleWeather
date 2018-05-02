@@ -115,10 +115,14 @@ class APIHandler {
 
     getImportantDataFromJson(allMatches) {
         city = [];
+        var j = 0;
         for(let i=0;i<allMatches.RESULTS.length;i++) {
-            city[i] = {
-                name: allMatches.RESULTS[i].name,
-                country: allMatches.RESULTS[i].c
+             if(allMatches.RESULTS[i].type == "city") {
+                city[j] = {
+                    name: allMatches.RESULTS[i].name,
+                    country: allMatches.RESULTS[i].c
+                }
+                j++;
             }
         }
         return city;

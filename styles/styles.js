@@ -1,4 +1,7 @@
 import { StyleSheet } from 'react-native';
+import StylesDefault from '../styles/StylesDefault';
+
+const styleColor = new StylesDefault();
 
 export const styles = StyleSheet.create({
     searchBar: {
@@ -43,6 +46,7 @@ export const styles = StyleSheet.create({
     },
     resultItemText: {
       fontSize: 17,
+      color:styleColor.getTextColor()
     }
   });
   
