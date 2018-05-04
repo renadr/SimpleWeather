@@ -3,8 +3,12 @@ import { View, Image, TextInput, ScrollView, Text, TouchableNativeFeedback, Butt
 import { styles } from '../styles/Styles';
 import StylesDefault from '../styles/StylesDefault';
 import APIHandler from '../components/API/APIHandler';
+import HomeScreen from '../components/HomeScreen';
+
+const Home = new HomeScreen();
 
 const APIManager = new APIHandler();
+
 
 class SearchScreen extends React.Component {
 
@@ -18,13 +22,17 @@ class SearchScreen extends React.Component {
     
     AutomaticResearch(text) {
         this.setState({search: text});
-        console.log(this.state.search);
         APIManager.getCities(this.state.search).then(data=> {
             this.setState({
                 cities: data
             });
-            console.log(this.state.cities);
         }).catch(error => console.error(error));
+    }
+
+    changeCityAndCountry(city,country) {
+        console.log(country);
+        Home.getCityAndCountry(city,country);
+        this.props.navigation.navigate('HomeScreen');
     }
 
     render() {
@@ -40,7 +48,7 @@ class SearchScreen extends React.Component {
                 </View>
                 <View style={{flex:8,alignItems: 'center'}}>
                     <FlatList style={{flex:1,flexDirection:'column'}} data={this.state.cities} renderItem={({item}) => 
-                        <TouchableNativeFeedback style={styles.resultClickable}><View style={styles.resultItem}><Text style={styles.resultItemText}>{item.name+", "+item.country}</Text></View></TouchableNativeFeedback>}
+                        <TouchableNativeFeedback style={styles.resultClickable} onPress={() =>this.changeCityAndCountry(item.city,item.country)}><View style={styles.resultItem}><Text style={styles.resultItemText}>{item.name+", "+item.country}</Text></View></TouchableNativeFeedback>}
                     keyExtractor={(item, index) => index} />
                 </View>
             </View>

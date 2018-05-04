@@ -27,7 +27,7 @@ export class Screen extends React.Component {
                 <Text style={{color:styleColor.getTextColor(),fontSize:25,fontWeight: 'bold'}}>{this.props.day}</Text>
               </View>
               <View style={{flexDirection:'row',flex:1,alignItems: 'center',justifyContent: 'center'}}>
-                <Text style={{color:styleColor.getTextColor(),fontSize:15}}>Paris, France</Text>
+                <Text style={{color:styleColor.getTextColor(),fontSize:15}}>{this.props.place}</Text>
               </View>
               <View style={{flexDirection:'row',flex:4, alignItems: 'center',justifyContent: 'center'}}>
                 <View style={{flex:1,flexDirection:'column',alignItems: 'center',justifyContent: 'center'}}>

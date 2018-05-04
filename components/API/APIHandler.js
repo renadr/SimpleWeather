@@ -10,9 +10,15 @@ const headers = {
     "Content-Type": "application/json",
     Accept: "application/json",
 };
+// export const APIManager = new APIHandler();
 
-class APIHandler {
+class APIHandler {  
 
+    constructor() {
+        this.country = "FR";
+        this.city = "Paris";
+      }
+    
     async getDataFromAPI(){
         try{
             APIResponse = await this.getAPIResponseFromLocation();
@@ -30,9 +36,9 @@ class APIHandler {
 
 
     async getAPIResponseFromLocation(){
-        var country = "FR";
-        var city = "Paris";
-        var specificData = country+"/"+city+".json";  
+        // var country = "FR";
+        // var city = "Paris";
+        var specificData = this.country+"/"+this.city+".json";  
         try{
             let response = await fetch(
                 API + specificData
@@ -74,7 +80,9 @@ class APIHandler {
                 infoText: weatherText,
                 iconcode: weatherInfo[i].icon,
                 tempText : weatherInfo[i].low.celsius + ' °C / ' + weatherInfo[i].high.celsius + ' °C',
-                tempAvg : (parseInt(weatherInfo[i].low.celsius) + parseInt(weatherInfo[i].high.celsius)) / 2
+                tempAvg : (parseInt(weatherInfo[i].low.celsius) + parseInt(weatherInfo[i].high.celsius)) / 2,
+                city : this.city,
+                country: this.country
             };
         }
         return dayInfo;
@@ -119,6 +127,7 @@ class APIHandler {
         for(let i=0;i<allMatches.RESULTS.length;i++) {
              if(allMatches.RESULTS[i].type == "city") {
                 city[j] = {
+                    city: allMatches.RESULTS[i].name.split(",")[0],
                     name: allMatches.RESULTS[i].name,
                     country: allMatches.RESULTS[i].c
                 }
@@ -126,6 +135,15 @@ class APIHandler {
             }
         }
         return city;
+    }
+
+    setCityAndCountry(city,country) {
+        this.city = city;
+        this.country = country;
+    }
+
+    getCity() {
+        return this.city;
     }
 
 }

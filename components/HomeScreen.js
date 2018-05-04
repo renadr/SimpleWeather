@@ -3,10 +3,11 @@ import { Text, View, ScrollView, Image, ActivityIndicator, TouchableNativeFeedba
 import { key } from '../key';
 import { Screen } from '../components/Screen';
 import APIHandler from '../components/API/APIHandler';
+// import APIManager from '../components/API/APIHandler';
 import { styles } from '../styles/Styles';
 import StylesDefault from '../styles/StylesDefault';
 
-const APIManager = new APIHandler();
+export const APIManager = new APIHandler();
 
 class HomeScreen extends React.Component {
 
@@ -32,6 +33,11 @@ class HomeScreen extends React.Component {
     });
   }
 
+  getCityAndCountry(city,country) {
+    // console.log(city+" "+country);
+    APIManager.setCityAndCountry(city,country);
+  }
+
   // If state is loading, display a spinner
   render() {
     if(this.state.isLoading){
@@ -53,6 +59,7 @@ class HomeScreen extends React.Component {
                 tempText={this.state.data.today.tempText}
                 tempAvg={this.state.data.today.tempAvg}
                 iconcode={this.state.data.today.iconcode}
+                place={this.state.data.today.city+", "+this.state.data.today.country}
                 />
                 <Screen
                 day={this.state.data.tommorow.day}
@@ -60,6 +67,7 @@ class HomeScreen extends React.Component {
                 tempText={this.state.data.tommorow.tempText}
                 tempAvg={this.state.data.tommorow.tempAvg}
                 iconcode={this.state.data.tommorow.iconcode}
+                place={this.state.data.tommorow.city+", "+this.state.data.tommorow.country}
                 />
                 <Screen
                 day={this.state.data.thirdDay.day}
@@ -67,6 +75,7 @@ class HomeScreen extends React.Component {
                 tempText={this.state.data.thirdDay.tempText}
                 tempAvg={this.state.data.thirdDay.tempAvg}
                 iconcode={this.state.data.thirdDay.iconcode}
+                place={this.state.data.thirdDay.city+", "+this.state.data.thirdDay.country}
                 />
             </ScrollView>
             </View>
