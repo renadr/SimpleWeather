@@ -38,7 +38,7 @@ class HomeScreen extends React.Component {
     APIManager.setCityAndCountry(city,country);
   }
 
-  // If state is loading, display a spinner
+  // If state is loadi ng, display a spinner
   render() {
     if(this.state.isLoading){
       return(
@@ -53,30 +53,9 @@ class HomeScreen extends React.Component {
         <View style={{flex:1}}>
             <View style={{flex:8}}>
                 <ScrollView horizontal={true} pagingEnabled={true}>
-                <Screen
-                day={this.state.data.today.day}
-                type={this.state.data.today.infoText}
-                tempText={this.state.data.today.tempText}
-                tempAvg={this.state.data.today.tempAvg}
-                iconcode={this.state.data.today.iconcode}
-                place={this.state.data.today.city+", "+this.state.data.today.country}
-                />
-                <Screen
-                day={this.state.data.tommorow.day}
-                type={this.state.data.tommorow.infoText}
-                tempText={this.state.data.tommorow.tempText}
-                tempAvg={this.state.data.tommorow.tempAvg}
-                iconcode={this.state.data.tommorow.iconcode}
-                place={this.state.data.tommorow.city+", "+this.state.data.tommorow.country}
-                />
-                <Screen
-                day={this.state.data.thirdDay.day}
-                type={this.state.data.thirdDay.infoText}
-                tempText={this.state.data.thirdDay.tempText}
-                tempAvg={this.state.data.thirdDay.tempAvg}
-                iconcode={this.state.data.thirdDay.iconcode}
-                place={this.state.data.thirdDay.city+", "+this.state.data.thirdDay.country}
-                />
+                <Screen weatherinfo={this.state.data.today} />
+                <Screen weatherinfo={this.state.data.tommorow} />
+                <Screen weatherinfo={this.state.data.thirdDay} />
             </ScrollView>
             </View>
             <View style={{flex:1,backgroundColor:styleColor.getBackgroundColor()}}>

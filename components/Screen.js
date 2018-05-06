@@ -17,17 +17,17 @@ export class Screen extends React.Component {
         let screenHeight = Dimensions.get('window').height;
 
         //Load the icon using ImagesLoader Service
-        icon = IconLoader.getIconFromCode(this.props.iconcode);
+        icon = IconLoader.getIconFromCode(this.props.weatherinfo.iconcode);
 
         return (
             <View style={{backgroundColor:styleColor.getBackgroundColor(),flex:1,width:screenWidth,}}>
             <StatusBar hidden />
             <View style={{flex:5}}>
               <View style={{flexDirection:'row',flex:1,alignItems: 'center',justifyContent: 'center'}}>
-                <Text style={{color:styleColor.getTextColor(),fontSize:25,fontWeight: 'bold'}}>{this.props.day}</Text>
+                <Text style={{color:styleColor.getTextColor(),fontSize:25,fontWeight: 'bold'}}>{this.props.weatherinfo.day}</Text>
               </View>
               <View style={{flexDirection:'row',flex:1,alignItems: 'center',justifyContent: 'center'}}>
-                <Text style={{color:styleColor.getTextColor(),fontSize:15}}>{this.props.place}</Text>
+                <Text style={{color:styleColor.getTextColor(),fontSize:15}}>{this.props.weatherinfo.city}, {this.props.weatherinfo.country}</Text>
               </View>
               <View style={{flexDirection:'row',flex:4, alignItems: 'center',justifyContent: 'center'}}>
                 <View style={{flex:1,flexDirection:'column',alignItems: 'center',justifyContent: 'center'}}>
@@ -35,13 +35,13 @@ export class Screen extends React.Component {
                 </View>
               </View>
               <View style={{flexDirection:'row',flex:1,alignItems: 'center',justifyContent: 'center'}}>
-                <Text style={{color:styleColor.getTextColor(),fontSize:20}}>{this.props.type}</Text>
+                <Text style={{color:styleColor.getTextColor(),fontSize:20}}>{this.props.weatherinfo.infoText}</Text>
               </View>
               <View style={{flexDirection:'row',flex:2,alignItems: 'center',justifyContent: 'center'}}>
-                <Text style={{color:styleColor.getTextColor(),fontSize:90,textShadowColor: 'rgba(0, 0, 0, 0.05)', textShadowOffset: {width: 0, height: 1}, textShadowRadius: 30, fontWeight: 'bold', }}>{this.props.tempAvg+" °C"}</Text>
+                <Text style={{color:styleColor.getTextColor(),fontSize:90,textShadowColor: 'rgba(0, 0, 0, 0.05)', textShadowOffset: {width: 0, height: 1}, textShadowRadius: 30, fontWeight: 'bold', }}>{this.props.weatherinfo.tempAvg+" °C"}</Text>
               </View>
               <View style={{flexDirection:'row',flex:1,alignItems: 'center',justifyContent: 'center'}}>
-                <Text style={{color:styleColor.getTextColor(),fontSize:20}}>{this.props.tempText}</Text>
+                <Text style={{color:styleColor.getTextColor(),fontSize:20}}>{this.props.weatherinfo.tempText}</Text>
               </View>
             </View>
           </View>
