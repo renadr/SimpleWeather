@@ -1,6 +1,4 @@
 {
-  "expo": {
-    "sdkVersion": "25.0.0",
-    "orientation": "portrait"
-  }
+  "name": "SimpleWeather",
+  "displayName": "SimpleWeather"
 }
