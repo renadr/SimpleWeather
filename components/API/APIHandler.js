@@ -3,7 +3,7 @@ import { APIkey } from '../../key.js';
 import iconConfigJSON from '../../icons.json';
 
 const APIBaseURL = "http://api.wunderground.com/api/";
-const APIService = "/forecast/q/";
+const APIService = "/forecast";
 const API = APIBaseURL + APIkey + APIService ;
 const APIAutoComplete = "http://autocomplete.wunderground.com/aq?query=";
 const headers = {
@@ -17,6 +17,7 @@ class APIHandler {
     constructor() {
         this.country = "FR";
         this.city = "Paris";
+        this.l = "/q/zmw:00000.45.07156";
       }
     
     async getDataFromAPI(){
@@ -38,7 +39,7 @@ class APIHandler {
     async getAPIResponseFromLocation(){
         // var country = "FR";
         // var city = "Paris";
-        var specificData = this.country+"/"+this.city+".json";  
+        var specificData = this.l+".json";  
         try{
             let response = await fetch(
                 API + specificData
@@ -129,7 +130,8 @@ class APIHandler {
                 city[j] = {
                     city: allMatches.RESULTS[i].name.split(",")[0],
                     name: allMatches.RESULTS[i].name,
-                    country: allMatches.RESULTS[i].c
+                    country: allMatches.RESULTS[i].c,
+                    l: allMatches.RESULTS[i].l,
                 }
                 j++;
             }
@@ -137,9 +139,10 @@ class APIHandler {
         return city;
     }
 
-    setCityAndCountry(city,country) {
+    setCityAndCountry(city,country,l) {
         this.city = city;
         this.country = country;
+        this.l = l;
     }
 
     getCity() {

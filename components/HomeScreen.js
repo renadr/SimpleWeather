@@ -33,9 +33,9 @@ class HomeScreen extends React.Component {
     });
   }
 
-  getCityAndCountry(city,country) {
+  getCityAndCountry(city,country,l) {
     // console.log(city+" "+country);
-    APIManager.setCityAndCountry(city,country);
+    APIManager.setCityAndCountry(city,country,l);
   }
 
   // If state is loadi ng, display a spinner

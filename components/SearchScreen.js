@@ -29,9 +29,9 @@ class SearchScreen extends React.Component {
         }).catch(error => console.error(error));
     }
 
-    changeCityAndCountry(city,country) {
+    changeCityAndCountry(city,country,l) {
         console.log(country);
-        Home.getCityAndCountry(city,country);
+        Home.getCityAndCountry(city,country,l);
         this.props.navigation.navigate('HomeScreen');
     }
 
@@ -48,7 +48,7 @@ class SearchScreen extends React.Component {
                 </View>
                 <View style={{flex:8,alignItems: 'center'}}>
                     <FlatList style={{flex:1,flexDirection:'column'}} data={this.state.cities} renderItem={({item}) => 
-                        <TouchableNativeFeedback style={styles.resultClickable} onPress={() =>this.changeCityAndCountry(item.city,item.country)}><View style={styles.resultItem}><Text style={styles.resultItemText}>{item.name+", "+item.country}</Text></View></TouchableNativeFeedback>}
+                        <TouchableNativeFeedback style={styles.resultClickable} onPress={() =>this.changeCityAndCountry(item.city,item.country,item.l)}><View style={styles.resultItem}><Text style={styles.resultItemText}>{item.name+", "+item.country}</Text></View></TouchableNativeFeedback>}
                     keyExtractor={(item, index) => index} />
                 </View>
             </View>
