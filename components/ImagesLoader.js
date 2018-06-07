@@ -24,7 +24,7 @@ class ImageLoader {
         return images.sleetIcon;
       case 'chancesnow':
         return images.snowIcon;
-      case 'chancestorm':
+      case 'chancetstorms':
         return images.thunderIcon;
       case 'clear':
         return images.sunriseIcon;
