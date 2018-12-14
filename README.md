@@ -1,6 +1,6 @@
 # SimpleWeather :sunny:
 
-![alt text](http://www.adrienlemaire.fr/src/img/simple-mockups-weather.png "Logo SimpleWeather & mockups")
+![alt text](http://www.adrienlemaire.fr/old/src/img/simple-mockups-weather.png "Logo SimpleWeather & mockups")
 
 ## Presentation
 
