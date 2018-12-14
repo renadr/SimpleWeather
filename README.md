@@ -10,7 +10,7 @@ SimpleWeather is an application made for Android and iOS. It allows you to see t
 
 The application is only available in french. The english language is coming soon... :smiley: :uk:
  
- ## Credit
+ ## Credits
  
  This application is made with [React Native](https://facebook.github.io/react-native/). 
  
